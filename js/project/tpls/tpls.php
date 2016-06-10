@@ -1,47 +1,88 @@
-<script type="text/template" id="calcTpl">
-  <form class="container" id="shippForm">
-    <div class="row">
-      <div class="col-xs-12"><h1>Доставка</h1></div>
-    </div>
-
-    <div class="services_area" id="servicesArea"></div>              
-
-    <div class="row" id="submitBox">
-      <div class="col-xs-12">
-        <div class="btn btn-primary" id="submitBtn">Рассчитать</div>
-      </div>
-    </div>   
-
-    <div id="modalsBox"></div> 
-  </form>
-</script>
-
-
-<script type="text/template" id="serviceTpl">
+<script type="text/template" id="pageDescTpl">
   <div class="row">
-    <div class="col-xs-1 form-group">
-      <input type="checkbox" name="" id="">
+    <div class="col-xs-4">
+      <input class="form-control"  type="file" id="pageDescLoadImg" name="img" accept="image/jpeg,image/png,image/gif">
     </div>
 
-    <div class="col-xs-4 label_service"></div>   
+    <div class="col-xs-8">
+      <input class="form-control" type="text" maxlength="45" id="coctailName1" placeholder="Название коктейля">
+      <input class="form-control" type="text" maxlength="45" id="coctailName2" placeholder="Альтернативное название через запятую">
+      <textarea class="form-control" maxlength="225" id="smallText" placeholder="Краткое описание"></textarea>        
+    </div>
+  </div>
 
-    <div class="col-xs-1 info_service"></div>       
+  <div class="row">
+    <div class="col-xs-12">
+      <textarea class="form-control" id="largeTextarea" maxlength="339" name="largeText" placeholder="Инструкция для приготовления"></textarea>
+    </div>
+  </div>             
 
-    <div class="col-xs-6 field_service">
-      <div class="field_box"></div>
-    </div>   
+  <div class="row navBox" >
+    <div class="col-xs-6">
+      <!--<a class="btn btn-default prev">Рассчитать</a>-->
+    </div>
+
+    <div class="col-xs-6">
+      <a class="btn btn-default pull-right next to_ingridients">Ингридиенты</a>
+    </div>      
   </div>   
 </script>
 
 
-<script type="text/template" id="fieldTpl">
-  <input class="field hide" type="text" name="" id="">
+<script type="text/template" id="pageIngridientsTpl">
+  <div class="row">
+    <div class="col-xs-12">
+        qwerty
+    </div>
+  </div>             
+
+  <div class="row navBox" >
+    <div class="col-xs-6">
+      <a class="btn btn-default prev to_desc">Описание</a>
+    </div>
+
+    <div class="col-xs-6">
+      <a class="btn btn-default pull-right next to_process">Процесс</a>
+    </div>      
+  </div>    
 </script>
 
 
-<script type="text/template" id="infoTpl">
-  <div class="glyphicon glyphicon-info-sign"></div>
-  <div class="hint_unit hide"><%= info %></div>
+<script type="text/template" id="pageProcessTpl">
+  <div class="row">
+    <div class="col-xs-12">
+        pro
+    </div>
+  </div>             
+
+  <div class="row navBox" >
+    <div class="col-xs-6">
+      <a class="btn btn-default prev to_ingridients">Ингридиенты</a>
+    </div>
+
+    <div class="col-xs-6">
+      <a class="btn btn-default pull-right next to_stemware">Бокалы</a>
+    </div>      
+  </div>    
+</script>
+
+
+<script type="text/template" id="pageStemwareTpl">
+  <div class="row">
+    <div class="col-xs-12">
+        pro
+    </div>
+  </div>             
+
+  <div class="row navBox" >
+    <div class="col-xs-6">
+      <a class="btn btn-default prev to_process">Процесс</a>
+    </div>
+
+    <div class="col-xs-6">
+      <a class="btn btn-primary pull-right next to_submit">Отправить</a>
+    </div>      
+  </div>    
 </script>
 
 

@@ -16,7 +16,7 @@
 <script src="js/project/views/modalViews.js"></script> 
 
 <script>
-  var app = new APP.CoctailFormView({el: '#coctailForm'});
-  //var app = new APP.NavigationRouter();
+  APP.coctailFormView = new APP.CoctailFormView({el: '#coctailForm'});
+  var navigationRouter = new APP.NavigationRouter();
 </script>
 

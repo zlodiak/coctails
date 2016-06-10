@@ -3,12 +3,19 @@ APP.CoctailFormView = Backbone.View.extend({
   initialize: function() { 
     this.pagesViews = [];
 
-    this.pagesViews.push(new APP.PageDescView());
-    this.pagesViews.push(new APP.PageIngridientsView());
-    this.pagesViews.push(new APP.PageProcessView());
-    this.pagesViews.push(new APP.PageStemwareView());  
+    APP.pageDescView = new APP.PageDescView(),
+    APP.pageIngridientsView = new APP.PageIngridientsView(),
+    APP.pageProcessView = new APP.PageProcessView(),
+    APP.pageStemwareView = new APP.PageStemwareView();  
+
+    this.pagesViews.push(APP.pageDescView);
+    this.pagesViews.push(APP.pageIngridientsView);
+    this.pagesViews.push(APP.pageProcessView);
+    this.pagesViews.push(APP.pageStemwareView);
 
     this.render();  
+
+    
   },
 
   render: function () {  
@@ -19,7 +26,13 @@ APP.CoctailFormView = Backbone.View.extend({
     });
 
     return this;
-  }
+  },
+
+  hideAllVews: function () {  console.log('hav')
+    _.each(this.pagesViews, function(view){ 
+      view.$el.addClass('hide');
+    });
+  } 
 
 });
 
@@ -29,14 +42,22 @@ APP.PageDescView = Backbone.View.extend({
     
   },
 
+  id: 'pageDesc',
+
   className: 'page_desc',
 
-  template: _.template("$('#pageDescTpl').html()"),
+  template: _.template($('#pageDescTpl').html()),
 
   render: function () {  
     this.$el.html(this.template());
     return this;
-  }
+  },
+
+  show: function () {  
+    this.$el.removeClass('hide');
+    return this;
+  }  
+
 
 });
 
@@ -47,14 +68,22 @@ APP.PageIngridientsView = Backbone.View.extend({
     
   },
 
+  id: 'pageIngridients',
+
   className: 'page_ingridients',
 
-  template: _.template("$('#pageIngridientsTpl').html()"),
+  template: _.template($('#pageIngridientsTpl').html()),
 
   render: function () {  
     this.$el.html(this.template());
     return this;
-  }
+  },
+
+  show: function () {  
+    this.$el.removeClass('hide');
+    return this;
+  }  
+
 
 });
 
@@ -66,14 +95,22 @@ APP.PageProcessView = Backbone.View.extend({
     
   },
 
+  id: 'pageProcess',
+
   className: 'page_process',
 
-  template: _.template("$('#pageProcessTpl').html()"),
+  template: _.template($('#pageProcessTpl').html()),
 
   render: function () {  
     this.$el.html(this.template());
     return this;
-  }
+  },
+
+  show: function () {  
+    this.$el.removeClass('hide');
+    return this;
+  }  
+
 
 });
 
@@ -84,14 +121,21 @@ APP.PageStemwareView = Backbone.View.extend({
     
   },
 
+  id: 'pageStemware',
+
   className: 'page_stemware',
 
-  template: _.template("$('#pageStemwareTpl').html()"),
+  template: _.template($('#pageStemwareTpl').html()),
 
   render: function () {  
     this.$el.html(this.template());
     return this;
-  }
+  },
+
+  show: function () {  
+    this.$el.removeClass('hide');
+    return this;
+  }  
 
 });
 
