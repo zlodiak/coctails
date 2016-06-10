@@ -23,7 +23,7 @@
     </div>
 
     <div class="col-xs-6">
-      <a class="btn btn-default pull-right next to_ingridients">Ингридиенты</a>
+      <a class="btn btn-default pull-right next to_ingridients" href="#page_ingridients">Ингридиенты</a>
     </div>      
   </div>   
 </script>
@@ -38,11 +38,11 @@
 
   <div class="row navBox" >
     <div class="col-xs-6">
-      <a class="btn btn-default prev to_desc">Описание</a>
+      <a class="btn btn-default prev to_desc" href="#page_desc">Описание</a>
     </div>
 
     <div class="col-xs-6">
-      <a class="btn btn-default pull-right next to_process">Процесс</a>
+      <a class="btn btn-default pull-right next to_process" href="#page_process">Процесс</a>
     </div>      
   </div>    
 </script>
@@ -57,11 +57,11 @@
 
   <div class="row navBox" >
     <div class="col-xs-6">
-      <a class="btn btn-default prev to_ingridients">Ингридиенты</a>
+      <a class="btn btn-default prev to_ingridients" href="#page_ingridients">Ингридиенты</a>
     </div>
 
     <div class="col-xs-6">
-      <a class="btn btn-default pull-right next to_stemware">Бокалы</a>
+      <a class="btn btn-default pull-right next to_stemware" href="#page_stemware">Бокалы</a>
     </div>      
   </div>    
 </script>
@@ -76,7 +76,7 @@
 
   <div class="row navBox" >
     <div class="col-xs-6">
-      <a class="btn btn-default prev to_process">Процесс</a>
+      <a class="btn btn-default prev to_process" href="#page_process">Процесс</a>
     </div>
 
     <div class="col-xs-6">

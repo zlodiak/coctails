@@ -13,24 +13,28 @@ APP.NavigationRouter = Backbone.Router.extend({
   },   
 
   page_desc: function () {    
-    APP.coctailFormView.hideAllVews();
-    APP.pageDescView.show();
+    this._showView(APP.pageDescView);
   },
 
-  page_ingridients: function () {  console.log('i')
-    app._hideAllVews();
+  page_ingridients: function () {  
+    this._showView(APP.pageIngridientsView);
   },  
 
   page_process: function () {  
-    app._hideAllVews();
+    this._showView(APP.pageProcessView);
   },     
 
   page_stemware: function () {  
-    app._hideAllVews();
+    this._showView(APP.pageStemwareView);
   }, 
 
   page_error404: function () {  
     // todo
-  }           
+  },
+
+  _showView: function (view) {  
+    APP.coctailFormView.hideAllVews();
+    view.show();
+  }                
 });
 
