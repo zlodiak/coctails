@@ -1,0 +1,43 @@
+/*
+INFO: 
+	project: coctail form
+	browsers: opera/chrome/FF/ie9/safari
+	width: 
+	columns:
+	markup: Sergey Kalinin 06/2016 (prozaik81-2@yandex.ru)
+	use: jq, bootstrap, underscore, backbone, backbone-validation
+	desc: 	
+	version 1
+*/	
+
+/****************************************************************************** COMMON_STYLES */
+.coctail_form .hide{
+	display: none !important;
+}
+
+.coctail_form .show{
+	display: block !important;
+}
+
+.coctail_form .not_valid{
+	border: 1px solid red;
+}
+
+.coctail_form .valid{
+	border: 1px solid #ccc;
+}
+
+
+
+/****************************************************************************** GLOBAL_layout */
+
+
+
+
+/****************************************************************************** GLOBAL_blocks: modal */
+.modal-body{
+	overflow: hidden;
+}
+
+
+/****************************************************************************** GLOBAL_blocks: places_area */
