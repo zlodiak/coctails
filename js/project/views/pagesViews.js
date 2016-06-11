@@ -18,8 +18,15 @@ APP.PageDescView = Backbone.View.extend({
   show: function () {  
     this.$el.removeClass('hide');
     return this;
-  }  
+  },
 
+  events: {
+    'click #loadImgLabel': 'openLoadFileMaster'
+  },
+
+  openLoadFileMaster: function () {  
+    this.$el.find('#pageDescLoadImg').click();
+  } 
 
 });
 

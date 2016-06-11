@@ -10,11 +10,18 @@
 
 <script type="text/template" id="pageDescTpl">
   <div class="row">
-    <div class="col-xs-4">
-      <input class="form-control"  type="file" id="pageDescLoadImg" name="img" accept="image/jpeg,image/png,image/gif">
+    <div class="col-xs-2 load_img_box">
+      <div class="load_img_frame">
+        <img class="load_img" src="http://funkyimg.com/i/TZds.png" alt="">
+      </div>
+
+      <div class="load_img_button_outer">
+        <div class="load_img_label" id="loadImgLabel">Загрузить</div>
+        <input class="form-control load_img_button"  type="file" id="pageDescLoadImg" name="img" accept="image/jpeg,image/png,image/gif">
+      </div>
     </div>
 
-    <div class="col-xs-8">
+    <div class="col-xs-10">
       <input class="form-control" type="text" maxlength="45" id="coctailName1" placeholder="Название коктейля">
       <input class="form-control" type="text" maxlength="45" id="coctailName2" placeholder="Альтернативное название через запятую">
       <textarea class="form-control" maxlength="225" id="smallText" placeholder="Краткое описание"></textarea>        
