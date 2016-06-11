@@ -27,6 +27,10 @@ INFO:
 	border: 1px solid #ccc;
 }
 
+.coctail_form{
+	width: 700px;
+	margin: 0 auto;
+}
 
 
 /****************************************************************************** GLOBAL_layout */
@@ -40,4 +44,19 @@ INFO:
 }
 
 
-/****************************************************************************** GLOBAL_blocks: places_area */
+/****************************************************************************** GLOBAL_blocks: navigation_box */
+.navigation_box{
+
+}
+
+	.navigation_box .navLink{
+		font-weight: normal;
+		text-decoration: none;
+		color: #000;
+
+		display: block;
+	}
+
+	.navigation_box .navLink.active{
+		font-weight: bold;
+	}

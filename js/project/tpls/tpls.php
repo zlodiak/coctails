@@ -1,3 +1,13 @@
+<script type="text/template" id="navigationTpl">
+  <div class="row navigation_box" id="navigationBox">
+    <a class="col-xs-3 navLink" id="navDesc"        href="#page_desc">Описание</a>
+    <a class="col-xs-3 navLink" id="navIngridients" href="#page_ingridients">Ингридиенты</a>
+    <a class="col-xs-3 navLink" id="navProcess"     href="#page_process">Процесс</a>
+    <a class="col-xs-3 navLink" id="navStemware"    href="#page_stemware">Бокалы</a>
+  </div>                
+</script>
+
+
 <script type="text/template" id="pageDescTpl">
   <div class="row">
     <div class="col-xs-4">

@@ -14,9 +14,15 @@
 <script src="js/project/collections/collections.js"></script> 
 <script src="js/project/views/pagesViews.js"></script> 
 <script src="js/project/views/modalViews.js"></script> 
+<script src="js/project/views/coctailView.js"></script> 
+<script src="js/project/views/navigationView.js"></script> 
 
 <script>
   APP.coctailFormView = new APP.CoctailFormView({el: '#coctailForm'});
-  var navigationRouter = new APP.NavigationRouter();
+
+  APP.navigationView = new APP.NavigationView();
+  $('#coctailForm').prepend(APP.navigationView.el);
+
+  APP.navigationRouter = new APP.NavigationRouter();
 </script>
 
