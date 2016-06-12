@@ -32,7 +32,7 @@ APP.CoctailFormView = Backbone.View.extend({
     return this;
   },
 
-  hideAllVews: function () {  console.log('hav')
+  hideAllVews: function () {  
     _.each(this.pagesViews, function(view){ 
       view.$el.addClass('hide');
     });

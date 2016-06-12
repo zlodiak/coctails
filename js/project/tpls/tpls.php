@@ -84,12 +84,15 @@
 </script>
 
 
+<script type="text/template" id="stemwareUnitTpl">
+  <div class="col-xs-3">
+    <img src="images/stemware/<%= img %>" alt="">
+    <div class="label">Выбрать</div>
+  </div>
+</script>
+
 <script type="text/template" id="pageStemwareTpl">
-  <div class="row">
-    <div class="col-xs-12">
-        pro
-    </div>
-  </div>             
+  <div class="row" id="stemwareUnits"></div>             
 
   <div class="row navBox" >
     <div class="col-xs-6">

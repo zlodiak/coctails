@@ -118,7 +118,16 @@ APP.PageProcessView = Backbone.View.extend({
 APP.PageStemwareView = Backbone.View.extend({   
 
   initialize: function() { 
-    
+    APP.stemwareCollection = new APP.StemwareCollection();
+
+    _.each(APP.CONFIG.stemwareImages, function(img, key){ 
+      var stemwareModel = new APP.StemwareModel({
+        idSremware: key,
+        img: img
+      });
+
+      APP.stemwareCollection.add(stemwareModel);
+    });    
   },
 
   id: 'pageStemware',
@@ -129,6 +138,12 @@ APP.PageStemwareView = Backbone.View.extend({
 
   render: function () {  
     this.$el.html(this.template());
+
+    APP.stemwareCollection.each(function(model) {   console.log(model.get('img'))
+      var unit = new APP.PageStemwareUnitView().render(model).el;
+      this.$el.find('#stemwareUnits').append(unit);
+    }, this) 
+
     return this;
   },
 
@@ -136,6 +151,23 @@ APP.PageStemwareView = Backbone.View.extend({
     this.$el.removeClass('hide');
     return this;
   }  
+
+});
+
+
+APP.PageStemwareUnitView = Backbone.View.extend({   
+
+  className: 'stemware_unit',
+
+  template: _.template($('#stemwareUnitTpl').html()),
+
+  render: function (model) {  
+    this.$el.html(this.template({
+        id: model.get('idSremware'),
+        img: model.get('img')
+      }));
+    return this;
+  }
 
 });
 
