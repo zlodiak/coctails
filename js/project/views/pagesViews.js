@@ -11,7 +11,7 @@ APP.PageDescView = Backbone.View.extend({
   template: _.template($('#pageDescTpl').html()),
 
   render: function () {  
-    this.$el.html(this.template());
+    this.$el.html(this.template({defaultLoadImg: APP.CONFIG.defaultLoadImg}));
     return this;
   },
 
@@ -37,24 +37,18 @@ APP.PageDescView = Backbone.View.extend({
     var reader = new FileReader();
 
     reader.onload = function(e) { 
-      var elem = document.getElementById("loadImg"),
+      var elem = $("#loadImg"),
           src,
           width,
           height;
 
       if(fileInfo.size == 0) {
-        src = 'http://funkyimg.com/i/TZds.png';
-        width = '74px';
-        height = '131px';
+        elem.attr('src', 'images/' + APP.CONFIG.defaultLoadImg);
+        elem.removeClass('load_img_loaded');
       } else {
-        src = e.target.result;
-        width = '100%';
-        height = 'auto';
+        elem.attr('src', e.target.result);
+        elem.addClass('load_img_loaded');
       };
-
-      elem.src = src;
-      elem.style.width = width;
-      elem.style.height = height;
     };
 
     reader.readAsDataURL(fileInfo);
