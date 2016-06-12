@@ -12,7 +12,7 @@
   <div class="row">
     <div class="col-xs-2 load_img_box">
       <div class="load_img_frame">
-        <img class="load_img" src="http://funkyimg.com/i/TZds.png" alt="">
+        <img class="load_img" id="loadImg" src="http://funkyimg.com/i/TZds.png" alt="">
       </div>
 
       <div class="load_img_button_outer">

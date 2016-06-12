@@ -8,6 +8,7 @@
   window.APP = window.APP || {};
 </script>
 
+<script src="js/project/config.js"></script> 
 <script src="js/project/misc.js"></script> 
 <script src="js/project/routers/navigationRouter.js"></script> 
 <script src="js/project/models/models.js"></script> 
