@@ -157,7 +157,7 @@ APP.PageStemwareView = Backbone.View.extend({
 
 APP.PageStemwareUnitView = Backbone.View.extend({   
 
-  className: 'stemware_unit',
+  className: 'col-xs-3',
 
   template: _.template($('#stemwareUnitTpl').html()),
 

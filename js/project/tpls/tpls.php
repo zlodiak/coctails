@@ -85,7 +85,7 @@
 
 
 <script type="text/template" id="stemwareUnitTpl">
-  <div class="col-xs-3">
+  <div class="stemware_unit">
     <img src="images/stemware/<%= img %>" alt="">
     <div class="label">Выбрать</div>
   </div>
