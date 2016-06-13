@@ -28,7 +28,7 @@ INFO:
 }
 
 .coctail_form{
-	width: 700px;
+	width: 424px;
 	margin: 0 auto;
 }
 
@@ -43,6 +43,15 @@ INFO:
 	overflow: hidden;
 }
 
+
+/****************************************************************************** GLOBAL_blocks: process */
+.page_process{
+
+}
+
+	.process_cell{
+		overflow: hidden;
+	}
 
 /****************************************************************************** GLOBAL_blocks: page_stemware */
 .stemware_unit{

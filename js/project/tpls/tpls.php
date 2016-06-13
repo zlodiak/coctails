@@ -10,7 +10,7 @@
 
 <script type="text/template" id="pageDescTpl">
   <div class="row">
-    <div class="col-xs-2 load_img_box">
+    <div class="col-xs-3 load_img_box">
       <div class="load_img_frame">
         <img class="load_img" id="loadImg" src="images/<%= defaultLoadImg %>" alt="">
       </div>
@@ -21,7 +21,7 @@
       </div>
     </div>
 
-    <div class="col-xs-10">
+    <div class="col-xs-9">
       <input class="form-control" type="text" maxlength="45" id="coctailName1" placeholder="Название коктейля">
       <input class="form-control" type="text" maxlength="45" id="coctailName2" placeholder="Альтернативное название через запятую">
       <textarea class="form-control" maxlength="225" id="smallText" placeholder="Краткое описание"></textarea>        
@@ -46,11 +46,38 @@
 </script>
 
 
+<script type="text/template" id="ingridientUnitTpl">
+  <div class="col-xs-4">
+    <select>
+      <option>Пункт 1</option>
+      <option>Пункт 2</option>
+      <option>Пункт 3</option>
+    </select>
+  </div>
+
+  <div class="col-xs-4">
+    <input type="number">
+  </div>
+
+  <div class="col-xs-3">
+    <select>
+      <option>Пункт 1</option>
+      <option>Пункт 2</option>
+      <option>Пункт 3</option>
+    </select>
+  </div>
+
+  <div class="col-xs-1">
+    <input type="checkbox">
+  </div>    
+</script>
+
+
 <script type="text/template" id="pageIngridientsTpl">
+  <div class="ingridients_units" id="ingridientsUnits"></div>   
+
   <div class="row">
-    <div class="col-xs-12">
-        qwerty
-    </div>
+    <div class="btn btn-xs btn-default pull-right" id="addIngridientBtn">Ещё</div>
   </div>             
 
   <div class="row navBox" >
@@ -67,10 +94,147 @@
 
 <script type="text/template" id="pageProcessTpl">
   <div class="row">
-    <div class="col-xs-12">
-        pro
+    <div class="col-xs-12"><h3>Параметры приготовления</h3></div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-2"><h4>Порций</h4></div>
+    <div class="col-xs-2"><h4>Время</h4></div>  
+    <div class="col-xs-4"><h4>Сложность</h4></div>  
+    <div class="col-xs-4"><h4>Метод</h4></div>          
+  </div>   
+
+  <div class="row">
+    <div class="col-xs-2 process_cell">
+      <input type="number">
     </div>
-  </div>             
+
+    <div class="col-xs-2 process_cell">
+      <select>
+        <option>Пункт 1</option>
+        <option>Пункт 2</option>
+        <option>Пункт 3</option>
+      </select>
+    </div>  
+    
+    <div class="col-xs-4 process_cell">
+      <select>
+        <option>Пункт 1</option>
+        <option>Пункт 2</option>
+        <option>Пункт 3</option>
+      </select>
+    </div>  
+
+    <div class="col-xs-4 process_cell">
+      <select>
+        <option>Пункт 1</option>
+        <option>Пункт 2</option>
+        <option>Пункт 3</option>
+      </select>
+    </div>          
+  </div>      
+
+  <div class="row">
+    <div class="col-xs-12"><h3>Тип коктейля</h3></div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-4"><h4>По крепости</h4></div>
+    <div class="col-xs-4"><h4>На соснове</h4></div>  
+    <div class="col-xs-4"><h4>По типу</h4></div>          
+  </div>  
+
+  <div class="row">
+    <div class="col-xs-4 process_cell">
+      <select>
+        <option>Пункт 1</option>
+        <option>Пункт 2</option>
+        <option>Пункт 3</option>
+      </select>
+    </div>  
+    
+    <div class="col-xs-4 process_cell">
+      <select>
+        <option>Пункт 1</option>
+        <option>Пункт 2</option>
+        <option>Пункт 3</option>
+      </select>
+    </div>  
+
+    <div class="col-xs-4 process_cell">
+      <select>
+        <option>Пункт 1</option>
+        <option>Пункт 2</option>
+        <option>Пункт 3</option>
+      </select>
+    </div>          
+  </div> 
+
+  <div class="row">
+    <div class="col-xs-12"><h3>Теги</h3></div>
+  </div>     
+
+  <div class="row">
+    <div class="col-xs-4 process_cell">
+      <input type="checkbox" class="" id="">
+      <label class="" for="">Бодрящие</label>
+    </div>  
+    
+    <div class="col-xs-4 process_cell">
+      <input type="checkbox" class="" id="">
+      <label class="" for="">Бодрящие</label>
+    </div> 
+
+    <div class="col-xs-4 process_cell">
+      <input type="checkbox" class="" id="">
+      <label class="" for="">Бодрящие</label>
+    </div> 
+
+    <div class="col-xs-4 process_cell">
+      <input type="checkbox" class="" id="">
+      <label class="" for="">Бодрящие</label>
+    </div> 
+
+    <div class="col-xs-4 process_cell">
+      <input type="checkbox" class="" id="">
+      <label class="" for="">Бодрящие</label>
+    </div>  
+    
+    <div class="col-xs-4 process_cell">
+      <input type="checkbox" class="" id="">
+      <label class="" for="">Бодрящие</label>
+    </div> 
+
+    <div class="col-xs-4 process_cell">
+      <input type="checkbox" class="" id="">
+      <label class="" for="">Бодрящие</label>
+    </div> 
+
+    <div class="col-xs-4 process_cell">
+      <input type="checkbox" class="" id="">
+      <label class="" for="">Бодрящие</label>
+    </div> 
+
+    <div class="col-xs-4 process_cell">
+      <input type="checkbox" class="" id="">
+      <label class="" for="">Бодрящие</label>
+    </div>  
+    
+    <div class="col-xs-4 process_cell">
+      <input type="checkbox" class="" id="">
+      <label class="" for="">Бодрящие</label>
+    </div> 
+
+    <div class="col-xs-4 process_cell">
+      <input type="checkbox" class="" id="">
+      <label class="" for="">Бодрящие</label>
+    </div> 
+
+    <div class="col-xs-4 process_cell">
+      <input type="checkbox" class="" id="">
+      <label class="" for="">Бодрящие</label>
+    </div>                          
+  </div>          
 
   <div class="row navBox" >
     <div class="col-xs-6">

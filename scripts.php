@@ -10,13 +10,22 @@
 
 <script src="js/project/config.js"></script> 
 <script src="js/project/misc.js"></script> 
+
 <script src="js/project/routers/navigationRouter.js"></script> 
 <script src="js/project/models/models.js"></script> 
 <script src="js/project/collections/collections.js"></script> 
-<script src="js/project/views/pagesViews.js"></script> 
+
+<script src="js/project/views/navigationView.js"></script> 
 <script src="js/project/views/modalViews.js"></script> 
 <script src="js/project/views/coctailView.js"></script> 
-<script src="js/project/views/navigationView.js"></script> 
+
+<script src="js/project/views/pages/descViews.js"></script> 
+<script src="js/project/views/pages/ingridientsViews.js"></script> 
+<script src="js/project/views/pages/processViews.js"></script> 
+<script src="js/project/views/pages/stemwareViews.js"></script> 
+
+
+
 
 <script>
   APP.coctailFormView = new APP.CoctailFormView({el: '#coctailForm'});
