@@ -9,4 +9,18 @@ APP.StemwareModel = Backbone.Model.extend({
 });
 
 
+APP.IngridientModel = Backbone.Model.extend({
+
+  defaults: {
+    idIngridient: undefined,
+    title: 'undefined',
+    cnt: 1,
+    measure: 'undefined',       
+    decoration: false       
+  }    
+
+});
+
+
+
 

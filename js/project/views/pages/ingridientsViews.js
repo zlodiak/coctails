@@ -22,7 +22,7 @@ APP.PageIngridientsView = Backbone.View.extend({
   },  
 
   addIngridient: function () {  
-    var ingridientElem = new APP.PageIngridientUnitView().render().el;
+    var ingridientElem =  new APP.PageIngridientUnitView().render().el;
     this.$el.find('#ingridientsUnits').append(ingridientElem);
   }
 
@@ -31,12 +31,18 @@ APP.PageIngridientsView = Backbone.View.extend({
 
 APP.PageIngridientUnitView = Backbone.View.extend({   
 
+  initialize: function() { 
+    this.model = new APP.IngridientModel();
+  },
+
   className: 'row',
 
   template: _.template($('#ingridientUnitTpl').html()),
 
-  render: function () {  
-    this.$el.html(this.template());
+  render: function () {  console.log(this.model)
+    var title = this.model.get('title');
+
+    this.$el.html(this.template(this.model.toJSON()));
     return this;
   }
 

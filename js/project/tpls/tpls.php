@@ -47,19 +47,22 @@
 
 
 <script type="text/template" id="ingridientUnitTpl">
-  <div class="col-xs-4">
+  <div class="col-xs-4 ingridient_cell">
+    <%= title %>
     <select>
-      <option>Пункт 1</option>
+      <option>Пункт 4</option>
       <option>Пункт 2</option>
       <option>Пункт 3</option>
     </select>
   </div>
 
-  <div class="col-xs-4">
+  <div class="col-xs-4 ingridient_cell">
+    <%= cnt %>
     <input type="number">
   </div>
 
-  <div class="col-xs-3">
+  <div class="col-xs-3 ingridient_cell">
+    <%= measure %>
     <select>
       <option>Пункт 1</option>
       <option>Пункт 2</option>
@@ -67,7 +70,8 @@
     </select>
   </div>
 
-  <div class="col-xs-1">
+  <div class="col-xs-1 ingridient_cell">
+    <%= decoration %>
     <input type="checkbox">
   </div>    
 </script>
@@ -106,7 +110,7 @@
 
   <div class="row">
     <div class="col-xs-2 process_cell">
-      <input type="number">
+      <input type="number" >
     </div>
 
     <div class="col-xs-2 process_cell">

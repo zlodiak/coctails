@@ -44,6 +44,11 @@ INFO:
 }
 
 
+/****************************************************************************** GLOBAL_blocks: ingridients */
+.ingridient_cell{
+  overflow: hidden;
+}
+
 /****************************************************************************** GLOBAL_blocks: process */
 .page_process{
 
