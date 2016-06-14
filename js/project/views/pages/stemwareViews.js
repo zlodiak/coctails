@@ -19,37 +19,68 @@ APP.PageStemwareView = Backbone.View.extend({
 
   template: _.template($('#pageStemwareTpl').html()),
 
-  render: function () {  
+  render: function() {  
     this.$el.html(this.template());
 
     APP.stemwareCollection.each(function(model) {  
-      var unit = new APP.PageStemwareUnitView().render(model).el;
+      var unit = new APP.PageStemwareUnitView(model).render().el;
       this.$el.find('#stemwareUnits').append(unit);
     }, this) 
 
     return this;
   },
 
-  show: function () {  
+  show: function() {  
     this.$el.removeClass('hide');
     return this;
-  }  
+  }
 
 });
 
 
-APP.PageStemwareUnitView = Backbone.View.extend({   
+APP.PageStemwareUnitView = Backbone.View.extend({  
+
+  initialize: function(model) { 
+    this.model = model;
+
+    this.listenTo(this.model, 'change', this.toggleAppearance);
+  }, 
 
   className: 'col-xs-3',
 
   template: _.template($('#stemwareUnitTpl').html()),
 
-  render: function (model) {  
+  render: function () {  
     this.$el.html(this.template({
-        id: model.get('idSremware'),
-        img: model.get('img')
+        id: this.model.get('idSremware'),
+        img: this.model.get('img')
       }));
     return this;
-  }
+  },
+
+  events:{
+    'click .label' : 'toggleSelect'
+  },   
+
+  toggleAppearance: function() {  
+    var selected = this.model.get('selected'),
+        labelElem = this.$el.find('.label');
+
+    if(selected == true) {
+      labelElem.addClass('selected');
+      labelElem.text('Выбрано');
+    } 
+    else if(selected == false) {
+      labelElem.removeClass('selected');
+      labelElem.text('Выбрать');
+    };
+  },
+
+  toggleSelect: function() {  
+    var selected = this.model.get('selected'),
+        newSelected = !selected;
+
+    this.model.set({selected: newSelected});
+  }   
 
 });

@@ -101,6 +101,7 @@ INFO:
     z-index: 100;		
 	}
 
+  .stemware_unit .label.selected,
 	.stemware_unit .label:hover {
 	    opacity: 0.8;
 	    background-image: -webkit-linear-gradient(#62a2d6, #3668a6);
