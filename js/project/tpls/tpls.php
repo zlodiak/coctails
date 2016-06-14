@@ -120,15 +120,15 @@
     </div>
 
     <div class="col-xs-3 process_cell">
-      <select id="timeUnits"></select>
+      <select class="form-control" id="timeUnits"></select>
     </div>  
     
     <div class="col-xs-3 process_cell">
-      <select id="complexityUnits"></select>
+      <select class="form-control" id="complexityUnits"></select>
     </div>  
 
     <div class="col-xs-3 process_cell">
-      <select id="methodUnits"></select>
+      <select class="form-control" id="methodUnits"></select>
     </div>          
   </div>      
 
@@ -137,34 +137,22 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-4"><h4>По крепости</h4></div>
+    <div class="col-xs-4"><h4>По крепкости</h4></div>
     <div class="col-xs-4"><h4>На соснове</h4></div>  
     <div class="col-xs-4"><h4>По типу</h4></div>          
   </div>  
 
   <div class="row">
     <div class="col-xs-4 process_cell">
-      <select>
-        <option>Пункт 1</option>
-        <option>Пункт 2</option>
-        <option>Пункт 3</option>
-      </select>
+      <select class="form-control" id="sturdinessUnits"></select>
     </div>  
     
     <div class="col-xs-4 process_cell">
-      <select>
-        <option>Пункт 1</option>
-        <option>Пункт 2</option>
-        <option>Пункт 3</option>
-      </select>
+      <select class="form-control" id="basicUnits"></select>
     </div>  
 
     <div class="col-xs-4 process_cell">
-      <select>
-        <option>Пункт 1</option>
-        <option>Пункт 2</option>
-        <option>Пункт 3</option>
-      </select>
+      <select class="form-control" id="typeUnits"></select>
     </div>          
   </div> 
 

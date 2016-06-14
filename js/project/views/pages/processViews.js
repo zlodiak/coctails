@@ -11,17 +11,16 @@ APP.PageProcessView = Backbone.View.extend({
   template: _.template($('#pageProcessTpl').html()),
 
   render: function () {  
-    var self = this;
-
     this.$el.html(this.template());
 
-    _.each(APP.CONFIG.tagsProcess, function(title, key){ 
-      var tag = new APP.TagView(title).render().el;
-      self.$el.find('#tagsProcessUnits').append(tag);
-    });
+    this.renderTags();
 
     this.renderUnits(APP.CONFIG.timeUnits, APP.TimeUnitView, '#timeUnits');         
     this.renderUnits(APP.CONFIG.complexityUnits, APP.ComplexityUnitView, '#complexityUnits');         
+    this.renderUnits(APP.CONFIG.methodUnits, APP.MethodUnitView, '#methodUnits');         
+    this.renderUnits(APP.CONFIG.sturdinessUnits, APP.SturdinessUnitView, '#sturdinessUnits');         
+    this.renderUnits(APP.CONFIG.basicUnits, APP.BasicUnitView, '#basicUnits');         
+    this.renderUnits(APP.CONFIG.typeUnits, APP.TypeUnitView, '#typeUnits');         
 
     return this;
   },
@@ -29,6 +28,15 @@ APP.PageProcessView = Backbone.View.extend({
   show: function () {  
     this.$el.removeClass('hide');
     return this;
+  },
+
+  renderTags: function () { 
+    var self = this;
+
+    _.each(APP.CONFIG.tagsProcess, function(title, key){ 
+      var tag = new APP.TagView(title).render().el;
+      self.$el.find('#tagsProcessUnits').append(tag);
+    });
   },
 
   renderUnits: function (unitsArr, unitViewName, unitWrapId) {   
@@ -65,8 +73,8 @@ APP.TimeUnitView = Backbone.View.extend({
 
   tagName: 'option',
 
-  render: function (timeUnit) {  
-    this.$el.html(timeUnit);
+  render: function (unit) {  
+    this.$el.html(unit);
     return this;
   }   
 
@@ -77,8 +85,56 @@ APP.ComplexityUnitView = Backbone.View.extend({
 
   tagName: 'option',
 
-  render: function (complexityUnit) {  
-    this.$el.html(complexityUnit);
+  render: function (unit) {  
+    this.$el.html(unit);
+    return this;
+  }   
+
+});
+
+
+APP.MethodUnitView = Backbone.View.extend({   
+
+  tagName: 'option',
+
+  render: function (unit) {  
+    this.$el.html(unit);
+    return this;
+  }   
+
+});
+
+
+APP.SturdinessUnitView = Backbone.View.extend({   
+
+  tagName: 'option',
+
+  render: function (unit) {  
+    this.$el.html(unit);
+    return this;
+  }   
+
+});
+
+
+APP.BasicUnitView = Backbone.View.extend({   
+
+  tagName: 'option',
+
+  render: function (unit) {  
+    this.$el.html(unit);
+    return this;
+  }   
+
+});
+
+
+APP.TypeUnitView = Backbone.View.extend({   
+
+  tagName: 'option',
+
+  render: function (unit) {  
+    this.$el.html(unit);
     return this;
   }   
 
