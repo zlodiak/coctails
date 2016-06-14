@@ -120,27 +120,15 @@
     </div>
 
     <div class="col-xs-3 process_cell">
-      <select>
-        <option>Пункт 1</option>
-        <option>Пункт 2</option>
-        <option>Пункт 3</option>
-      </select>
+      <select id="timeUnits"></select>
     </div>  
     
     <div class="col-xs-3 process_cell">
-      <select>
-        <option>Пункт 1</option>
-        <option>Пункт 2</option>
-        <option>Пункт 3</option>
-      </select>
+      <select id="complexityUnits"></select>
     </div>  
 
     <div class="col-xs-3 process_cell">
-      <select>
-        <option>Пункт 1</option>
-        <option>Пункт 2</option>
-        <option>Пункт 3</option>
-      </select>
+      <select id="methodUnits"></select>
     </div>          
   </div>      
 
