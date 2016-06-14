@@ -39,7 +39,7 @@ APP.PageIngridientUnitView = Backbone.View.extend({
 
   template: _.template($('#ingridientUnitTpl').html()),
 
-  render: function () {  console.log(this.model)
+  render: function () {  
     var title = this.model.get('title');
 
     this.$el.html(this.template(this.model.toJSON()));

@@ -22,5 +22,16 @@ APP.IngridientModel = Backbone.Model.extend({
 });
 
 
+APP.TagsProcessModel = Backbone.Model.extend({
+
+  defaults: {
+    idTag: undefined,
+    title: undefined,
+    checked: false       
+  }    
+
+});
+
+
 
 

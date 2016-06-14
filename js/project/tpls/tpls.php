@@ -96,24 +96,30 @@
 </script>
 
 
+<script type="text/template" id="tagProcessTpl">
+  <input type="checkbox" class="" id="">
+  <label class="tag_label" for=""><%= title %></label>
+</script>
+
+
 <script type="text/template" id="pageProcessTpl">
   <div class="row">
     <div class="col-xs-12"><h3>Параметры приготовления</h3></div>
   </div>
 
   <div class="row">
-    <div class="col-xs-2"><h4>Порций</h4></div>
-    <div class="col-xs-2"><h4>Время</h4></div>  
-    <div class="col-xs-4"><h4>Сложность</h4></div>  
-    <div class="col-xs-4"><h4>Метод</h4></div>          
+    <div class="col-xs-3"><h4>Порций</h4></div>
+    <div class="col-xs-3"><h4>Время</h4></div>  
+    <div class="col-xs-3"><h4>Сложность</h4></div>  
+    <div class="col-xs-3"><h4>Метод</h4></div>          
   </div>   
 
   <div class="row">
-    <div class="col-xs-2 process_cell">
-      <input type="number" >
+    <div class="col-xs-3 process_cell">
+      <input class="form-control" type="number" >
     </div>
 
-    <div class="col-xs-2 process_cell">
+    <div class="col-xs-3 process_cell">
       <select>
         <option>Пункт 1</option>
         <option>Пункт 2</option>
@@ -121,7 +127,7 @@
       </select>
     </div>  
     
-    <div class="col-xs-4 process_cell">
+    <div class="col-xs-3 process_cell">
       <select>
         <option>Пункт 1</option>
         <option>Пункт 2</option>
@@ -129,7 +135,7 @@
       </select>
     </div>  
 
-    <div class="col-xs-4 process_cell">
+    <div class="col-xs-3 process_cell">
       <select>
         <option>Пункт 1</option>
         <option>Пункт 2</option>
@@ -178,67 +184,7 @@
     <div class="col-xs-12"><h3>Теги</h3></div>
   </div>     
 
-  <div class="row">
-    <div class="col-xs-4 process_cell">
-      <input type="checkbox" class="" id="">
-      <label class="" for="">Бодрящие</label>
-    </div>  
-    
-    <div class="col-xs-4 process_cell">
-      <input type="checkbox" class="" id="">
-      <label class="" for="">Бодрящие</label>
-    </div> 
-
-    <div class="col-xs-4 process_cell">
-      <input type="checkbox" class="" id="">
-      <label class="" for="">Бодрящие</label>
-    </div> 
-
-    <div class="col-xs-4 process_cell">
-      <input type="checkbox" class="" id="">
-      <label class="" for="">Бодрящие</label>
-    </div> 
-
-    <div class="col-xs-4 process_cell">
-      <input type="checkbox" class="" id="">
-      <label class="" for="">Бодрящие</label>
-    </div>  
-    
-    <div class="col-xs-4 process_cell">
-      <input type="checkbox" class="" id="">
-      <label class="" for="">Бодрящие</label>
-    </div> 
-
-    <div class="col-xs-4 process_cell">
-      <input type="checkbox" class="" id="">
-      <label class="" for="">Бодрящие</label>
-    </div> 
-
-    <div class="col-xs-4 process_cell">
-      <input type="checkbox" class="" id="">
-      <label class="" for="">Бодрящие</label>
-    </div> 
-
-    <div class="col-xs-4 process_cell">
-      <input type="checkbox" class="" id="">
-      <label class="" for="">Бодрящие</label>
-    </div>  
-    
-    <div class="col-xs-4 process_cell">
-      <input type="checkbox" class="" id="">
-      <label class="" for="">Бодрящие</label>
-    </div> 
-
-    <div class="col-xs-4 process_cell">
-      <input type="checkbox" class="" id="">
-      <label class="" for="">Бодрящие</label>
-    </div> 
-
-    <div class="col-xs-4 process_cell">
-      <input type="checkbox" class="" id="">
-      <label class="" for="">Бодрящие</label>
-    </div>                          
-  </div>          
+  <div class="row" id="tagsProcessUnits"></div>          
 
   <div class="row navBox" >
     <div class="col-xs-6">
