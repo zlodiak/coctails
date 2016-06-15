@@ -187,25 +187,27 @@
     </div>
 
     <div class="col-xs-6">
-      <a class="btn btn-primary pull-right next to_submit">Отправить</a>
+      <a class="btn btn-primary pull-right next to_submit" id="submit">Отправить</a>
     </div>      
-  </div>    
+  </div>  
+
+  <div id="coctailModalBox"></div>  
 </script>
 
 
-<script type="text/template" id="paymentModalTpl">
-  <!-- Modal payment -->
-  <div class="modal fade payment_modal" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentLabel">
+<script type="text/template" id="coctailModalTpl">
+  <!-- Modal coctail -->
+  <div class="modal fade coctail_modal" id="coctailModal" tabindex="-1" role="dialog" aria-labelledby="coctailLabel">
     <div class="modal-dialog" role="document">     
       <div class="modal-content">
-        <form class="" id="paymentForm" method="get" action="#" onSubmit="return false;">
+        <form class="" id="coctailForm" method="get" action="#" onSubmit="return false;">
           <fieldset>         
             <div class="modal-header">
               <btn type="btn" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></btn>
-              <h4 class="modal-title" id="paymentLabel">Итого</h4>
+              <h4 class="modal-title" id="coctailLabel">Внимание</h4>
             </div>
 
-            <div class="modal-body" id="modalPositions"></div>
+            <div class="modal-body" id="modalFill"><%= modalFill %></div>
 
             <div class="modal-footer">
               <btn type="btn" class="btn btn-default" data-dismiss="modal">Понятно</btn>

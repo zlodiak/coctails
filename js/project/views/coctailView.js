@@ -14,8 +14,6 @@ APP.CoctailFormView = Backbone.View.extend({
     this.pagesViews.push(APP.pageStemwareView);
 
     this.render();  
-
-    
   },
 
   render: function () {  
@@ -30,6 +28,33 @@ APP.CoctailFormView = Backbone.View.extend({
     //this.$el.prepend(APP.navigationView.render().el);
 
     return this;
+  },
+
+  events:{
+    'click #submit' : 'trySubmit'
+  },  
+
+  trySubmit: function () {  
+    var coctailName1 = $.trim($('#coctailName1').val()),
+        stemwareSelectCnt = APP.stemwareCollection.findWhere({selected: true}),
+        modalFill = '';
+
+    if(coctailName1.length == 0 || !stemwareSelectCnt) {  
+      if(coctailName1.length == 0) {
+        modalFill += APP.CONFIG.errorMsgCoctailName1 + '<br>'
+      };  
+
+      if(!stemwareSelectCnt) {
+        modalFill += APP.CONFIG.errorMsgStemwareSelect + '<br>'
+      };      
+    } else {  
+
+    };
+
+    var modal = new APP.CoctailModalView(modalFill);
+    this.$el.find('#coctailModalBox').html(modal.el);   
+
+    $('#coctailModal').modal('show');
   },
 
   hideAllVews: function () {  

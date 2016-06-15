@@ -72,7 +72,7 @@ body{
 .stemware_unit{
   float: left;
   position: relative;
-  width: 102px;
+  width: 83px;
   height: 146px;
   border: 1px solid #8c969f;
   background: #fff;
@@ -80,7 +80,7 @@ body{
   -moz-border-radius: 3px;
   border-radius: 3px;
   margin-right: 9px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 
 	.stemware_unit img{
@@ -94,7 +94,7 @@ body{
 	.stemware_unit .label{
     position: absolute;
     left: 0px;
-    width: 100px;
+    width: 83px;
     height: 29px;
     border-top: 1px solid #68a6d5;
     bottom: 0;
