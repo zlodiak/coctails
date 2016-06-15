@@ -24,13 +24,13 @@
     <div class="col-xs-9">
       <input class="form-control" type="text" maxlength="45" id="coctailName1" placeholder="Название коктейля">
       <input class="form-control" type="text" maxlength="45" id="coctailName2" placeholder="Альтернативное название через запятую">
-      <textarea class="form-control" maxlength="225" id="smallText" placeholder="Краткое описание"></textarea>        
+      <textarea class="form-control" maxlength="225" id="smallInstruction" placeholder="Краткое описание"></textarea>        
     </div>
   </div>
 
   <div class="row">
     <div class="col-xs-12">
-      <textarea class="form-control" id="largeTextarea" maxlength="339" name="largeText" placeholder="Инструкция для приготовления"></textarea>
+      <textarea class="form-control" id="largeInstruction" maxlength="339" name="largeInstruction" placeholder="Инструкция для приготовления"></textarea>
     </div>
   </div>             
 

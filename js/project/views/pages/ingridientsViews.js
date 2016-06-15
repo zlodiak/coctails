@@ -53,10 +53,12 @@ APP.PageIngridientRowView = Backbone.View.extend({
   renderUnits: function (unitsArr, unitViewName, unitWrapId) {   
     var self = this;
 
-    _.each(unitsArr, function(unit){ 
-      var unitView = new unitViewName().render(unit).el;
+    _.each(unitsArr, function(unit, num){ 
+      var unitView = new unitViewName().render(unit, num).el;
       self.$el.find(unitWrapId).append(unitView);
-    });    
+    });   
+
+    this.$el.find("option:selected").attr('selected', true);
   } 
 
 });
@@ -66,8 +68,10 @@ APP.IngridientsUnitView = Backbone.View.extend({
 
   tagName: 'option',
 
-  render: function (unit) { 
+  render: function (unit, num) { 
     this.$el.html(unit);
+    this.$el.attr('value', num);
+
     return this;
   }   
 
@@ -78,8 +82,10 @@ APP.MeasuresUnitView = Backbone.View.extend({
 
   tagName: 'option',
 
-  render: function (unit) {  
+  render: function (unit, num) {  
     this.$el.html(unit);
+    this.$el.attr('value', num);
+
     return this;
   }   
 
