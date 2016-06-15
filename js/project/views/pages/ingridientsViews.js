@@ -1,4 +1,8 @@
-APP.PageIngridientsView = Backbone.View.extend({   
+APP.PageIngridientsView = Backbone.View.extend({  
+
+  initialize: function() { 
+    //this.renderUnits(APP.CONFIG.timeUnits, APP.TimeUnitView, '#timeUnits');  
+  }, 
 
   id: 'pageIngridients',
 
@@ -8,7 +12,7 @@ APP.PageIngridientsView = Backbone.View.extend({
 
   render: function () {  
     this.$el.html(this.template());
-    this.addIngridient();
+    this.addIngridientRow();
     return this;
   },
 
@@ -18,18 +22,27 @@ APP.PageIngridientsView = Backbone.View.extend({
   }, 
 
   events:{
-    'click #addIngridientBtn' : 'addIngridient'
+    'click #addIngridientBtn' : 'addIngridientRow'
   },  
 
-  addIngridient: function () {  
-    var ingridientElem =  new APP.PageIngridientUnitView().render().el;
-    this.$el.find('#ingridientsUnits').append(ingridientElem);
-  }
+  addIngridientRow: function () {  
+    var ingridientElem =  new APP.PageIngridientRowView().render().el;
+    this.$el.find('#ingridientsRows').append(ingridientElem);
+  },
+
+  renderUnits: function (unitsArr, unitViewName, unitWrapId) {   
+    var self = this;
+
+    _.each(unitsArr, function(unit){ 
+      var unitView = new unitViewName().render(unit).el;
+      self.$el.find(unitWrapId).append(unitView);
+    });    
+  }    
 
 });
 
 
-APP.PageIngridientUnitView = Backbone.View.extend({   
+APP.PageIngridientRowView = Backbone.View.extend({   
 
   initialize: function() { 
     this.model = new APP.IngridientModel();
@@ -37,7 +50,7 @@ APP.PageIngridientUnitView = Backbone.View.extend({
 
   className: 'row',
 
-  template: _.template($('#ingridientUnitTpl').html()),
+  template: _.template($('#ingridientRowTpl').html()),
 
   render: function () {  
     var title = this.model.get('title');
