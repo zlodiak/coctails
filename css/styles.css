@@ -93,7 +93,7 @@ body{
 
 	.stemware_unit .label{
     position: absolute;
-    left: 0px;
+    left: -1px;
     width: 83px;
     height: 29px;
     border-top: 1px solid #68a6d5;
