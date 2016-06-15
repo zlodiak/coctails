@@ -21,5 +21,6 @@ APP.CONFIG = {
     "Для компании"
   ],
   "errorMsgCoctailName1": "Необходимо ввести название коктейля",
-  "errorMsgStemwareSelect": "Необходимо выбрать тип бокала"
+  "errorMsgStemwareSelect": "Необходимо выбрать тип бокала",
+  "successAddCoctailMsg": "Ваш рецепт коктейля добавлен коллекцию"
 }

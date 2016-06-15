@@ -48,7 +48,7 @@ APP.CoctailFormView = Backbone.View.extend({
         modalFill += APP.CONFIG.errorMsgStemwareSelect + '<br>'
       };      
     } else {  
-
+      modalFill = APP.CONFIG.successAddCoctailMsg + '<br>'
     };
 
     var modal = new APP.CoctailModalView(modalFill);
