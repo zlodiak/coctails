@@ -1,9 +1,5 @@
 APP.PageIngridientsView = Backbone.View.extend({  
 
-  initialize: function() { 
-    //this.renderUnits(APP.CONFIG.timeUnits, APP.TimeUnitView, '#timeUnits');  
-  }, 
-
   id: 'pageIngridients',
 
   className: 'page_ingridients',
@@ -28,16 +24,7 @@ APP.PageIngridientsView = Backbone.View.extend({
   addIngridientRow: function () {  
     var ingridientElem =  new APP.PageIngridientRowView().render().el;
     this.$el.find('#ingridientsRows').append(ingridientElem);
-  },
-
-  renderUnits: function (unitsArr, unitViewName, unitWrapId) {   
-    var self = this;
-
-    _.each(unitsArr, function(unit){ 
-      var unitView = new unitViewName().render(unit).el;
-      self.$el.find(unitWrapId).append(unitView);
-    });    
-  }    
+  }   
 
 });
 
@@ -56,7 +43,44 @@ APP.PageIngridientRowView = Backbone.View.extend({
     var title = this.model.get('title');
 
     this.$el.html(this.template(this.model.toJSON()));
+
+    this.renderUnits(APP.CONFIG.ingridientsUnits, APP.IngridientsUnitView, '#ingridientsUnit');  
+    this.renderUnits(APP.CONFIG.measuresUnits, APP.MeasuresUnitView, '#measuresUnit');  
+
     return this;
-  }
+  },
+
+  renderUnits: function (unitsArr, unitViewName, unitWrapId) {   
+    var self = this;
+
+    _.each(unitsArr, function(unit){ 
+      var unitView = new unitViewName().render(unit).el;
+      self.$el.find(unitWrapId).append(unitView);
+    });    
+  } 
+
+});
+
+
+APP.IngridientsUnitView = Backbone.View.extend({   
+
+  tagName: 'option',
+
+  render: function (unit) { 
+    this.$el.html(unit);
+    return this;
+  }   
+
+});
+
+
+APP.MeasuresUnitView = Backbone.View.extend({   
+
+  tagName: 'option',
+
+  render: function (unit) {  
+    this.$el.html(unit);
+    return this;
+  }   
 
 });

@@ -48,23 +48,15 @@
 
 <script type="text/template" id="ingridientRowTpl">
   <div class="col-xs-4 ingridient_cell">
-    <select>
-      <option>Пункт 4</option>
-      <option>Пункт 2</option>
-      <option>Пункт 3</option>
-    </select>
+    <select class="form-control" id="ingridientsUnit"></select>
   </div>
 
   <div class="col-xs-4 ingridient_cell">
-    <input type="number">
+    <input class="form-control" type="number" value="1">
   </div>
 
   <div class="col-xs-3 ingridient_cell">
-    <select>
-      <option>Пункт 1</option>
-      <option>Пункт 2</option>
-      <option>Пункт 3</option>
-    </select>
+    <select class="form-control" id="measuresUnit"></select>
   </div>
 
   <div class="col-xs-1 ingridient_cell">
@@ -75,10 +67,10 @@
 
 <script type="text/template" id="pageIngridientsTpl">
   <div class="row">
-    <div class="col-xs-4"><h4>Порций</h4></div>
-    <div class="col-xs-4"><h4>Время</h4></div>  
-    <div class="col-xs-3"><h4>Сложность</h4></div>  
-    <div class="col-xs-1"><h4>Метод</h4></div>          
+    <div class="col-xs-4"><h4>Ингридиенты</h4></div>
+    <div class="col-xs-4"><h4></h4></div>  
+    <div class="col-xs-3"><h4></h4></div>  
+    <div class="col-xs-1"><h4>Украшение</h4></div>          
   </div>  
 
   <div class=" ingridients_units" id="ingridientsRows">

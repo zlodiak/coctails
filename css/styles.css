@@ -11,6 +11,14 @@ INFO:
 */	
 
 /****************************************************************************** COMMON_STYLES */
+body{
+  font: 14px Helvetica, sans-serif;
+}
+
+.form-control{
+  font: 12px Helvetica, sans-serif;
+}
+
 .coctail_form .hide{
 	display: none !important;
 }
@@ -47,6 +55,8 @@ INFO:
 /****************************************************************************** GLOBAL_blocks: ingridients */
 .ingridient_cell{
   overflow: hidden;
+
+
 }
 
 /****************************************************************************** GLOBAL_blocks: process */
