@@ -94,8 +94,8 @@
 
 
 <script type="text/template" id="tagProcessTpl">
-  <input type="checkbox" class="" id="" data-num="<%= num %>">
-  <label class="tag_label" for=""><%= title %></label>
+  <input type="checkbox" class="" id="tag_<%= num %>" data-num="<%= num %>">
+  <label class="tag_label" for="tag_<%= num %>"><%= title %></label>
 </script>
 
 

@@ -35,7 +35,7 @@ APP.PageIngridientsView = Backbone.View.extend({
   getResultArr: function() {  
     // function return array of selected values
 
-    var resultArr = [],
+    var ingridientsValuesArr = [],
         rowsElems = this.$el.find('#ingridientsRows .row');
 
     rowsElems.each(function(index, element){
@@ -51,10 +51,10 @@ APP.PageIngridientsView = Backbone.View.extend({
             {'decorationValue': decorationValue}
           ];
 
-      resultArr.push(rowValuesArr);
+      ingridientsValuesArr.push(rowValuesArr);
     });    
 
-    return resultArr;
+    return ingridientsValuesArr;
   }       
 
 });

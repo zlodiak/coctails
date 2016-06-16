@@ -53,7 +53,7 @@ APP.PageProcessView = Backbone.View.extend({
   getResultArr: function() {  
     // function return array of selected values
 
-    var resultArr = [],
+    var processValuesArr = [],
         checkedTagsArr = [],
         dozeUnitValue =       this.$el.find('#doseUnit').val(),
         timeUnitValue =       this.$el.find('#timeUnits option:selected').val(),
@@ -63,16 +63,25 @@ APP.PageProcessView = Backbone.View.extend({
         basicUnitValue =      this.$el.find('#basicUnits option:selected').val(), 
         typeValue =           this.$el.find('#typeUnits option:selected').val(),
         tagsElems =           this.$el.find('#tagsProcessUnits input:checked');
-/*
-    _.each(tagsElems, function(elem){
-      checkedTagsArr
+
+    _.each(tagsElems, function(elem){ 
+      checkedTagsArr.push($(elem).attr('data-num'))
     });
 
-        decorationValue = decorationElem.is(":checked") ? true : false,  */      
+    processValuesArr = [
+      {'dozeUnitValue': dozeUnitValue},
+      {'timeUnitValue': timeUnitValue},
+      {'complexityUnitValue': complexityUnitValue},
+      {'methodUnitValue': methodUnitValue},
+      {'sturdinessUnitValue': sturdinessUnitValue},
+      {'basicUnitValue': basicUnitValue},
+      {'typeValue': typeValue},
+      {'typeValue': typeValue},
+      {'tagsElems': tagsElems},
+      {'checkedTagsArr': checkedTagsArr}
+    ];
 
-      console.log(sturdinessUnitValue, basicUnitValue, typeValue)
-
-    return resultArr;
+    return processValuesArr;
   }       
 
 });

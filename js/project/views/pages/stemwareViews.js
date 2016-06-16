@@ -39,14 +39,14 @@ APP.PageStemwareView = Backbone.View.extend({
     // function return array of id`s selected stemware
 
     var stemwareSelectedItems = APP.stemwareCollection.where({selected: true}),
-        resultArr = [];
+        stemwareValuesArr = [];
 
     _.each(stemwareSelectedItems, function(model) { 
       var idSremware = model.get('idSremware');
-      resultArr.push(idSremware)
+      stemwareValuesArr.push(idSremware)
     });    
 
-    return resultArr;
+    return stemwareValuesArr;
   }  
 
 });
