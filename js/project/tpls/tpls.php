@@ -94,7 +94,7 @@
 
 
 <script type="text/template" id="tagProcessTpl">
-  <input type="checkbox" class="" id="">
+  <input type="checkbox" class="" id="" data-num="<%= num %>">
   <label class="tag_label" for=""><%= title %></label>
 </script>
 
@@ -113,7 +113,7 @@
 
   <div class="row">
     <div class="col-xs-3 process_cell">
-      <input class="form-control" type="number" >
+      <input class="form-control" id="doseUnit" type="number" value="1">
     </div>
 
     <div class="col-xs-3 process_cell">

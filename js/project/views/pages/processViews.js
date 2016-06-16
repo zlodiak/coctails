@@ -33,8 +33,8 @@ APP.PageProcessView = Backbone.View.extend({
   renderTags: function () { 
     var self = this;
 
-    _.each(APP.CONFIG.tagsProcess, function(title, key){ 
-      var tag = new APP.TagView(title).render().el;
+    _.each(APP.CONFIG.tagsProcess, function(title, num){ 
+      var tag = new APP.TagView(title, num).render().el;
       self.$el.find('#tagsProcessUnits').append(tag);
     });
   },
@@ -48,7 +48,32 @@ APP.PageProcessView = Backbone.View.extend({
     });
 
     this.$el.find("option:selected").attr('selected', true);    
-  }   
+  },
+
+  getResultArr: function() {  
+    // function return array of selected values
+
+    var resultArr = [],
+        checkedTagsArr = [],
+        dozeUnitValue =       this.$el.find('#doseUnit').val(),
+        timeUnitValue =       this.$el.find('#timeUnits option:selected').val(),
+        complexityUnitValue = this.$el.find('#complexityUnits option:selected').val(), 
+        methodUnitValue =     this.$el.find('#methodUnits option:selected').val(), 
+        sturdinessUnitValue = this.$el.find('#sturdinessUnits option:selected').val(), 
+        basicUnitValue =      this.$el.find('#basicUnits option:selected').val(), 
+        typeValue =           this.$el.find('#typeUnits option:selected').val(),
+        tagsElems =           this.$el.find('#tagsProcessUnits input:checked');
+/*
+    _.each(tagsElems, function(elem){
+      checkedTagsArr
+    });
+
+        decorationValue = decorationElem.is(":checked") ? true : false,  */      
+
+      console.log(sturdinessUnitValue, basicUnitValue, typeValue)
+
+    return resultArr;
+  }       
 
 });
 
@@ -138,8 +163,9 @@ APP.TypeUnitView = Backbone.View.extend({
 
 APP.TagView = Backbone.View.extend({   
 
-  initialize: function(title) { 
+  initialize: function(title, num) { 
     this.title = title;
+    this.num = num;
   },
 
   className: 'tag_process col-xs-4 process_cell',
@@ -147,7 +173,11 @@ APP.TagView = Backbone.View.extend({
   template: _.template($('#tagProcessTpl').html()),
 
   render: function () {  
-    this.$el.html(this.template({title: this.title}));
+    this.$el.html(this.template({
+      title: this.title,
+      num: this.num
+    }));
+
     return this;
   }   
 
