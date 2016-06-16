@@ -33,7 +33,19 @@ APP.PageStemwareView = Backbone.View.extend({
   show: function() {  
     this.$el.removeClass('hide');
     return this;
-  }
+  },
+
+  getResultArr: function() {  
+    var stemwareSelectedItems = APP.stemwareCollection.where({selected: true}),
+        resultArr = [];
+
+    _.each(stemwareSelectedItems, function(model) { 
+      var idSremware = model.get('idSremware');
+      resultArr.push(idSremware)
+    });    
+
+    return resultArr;
+  }  
 
 });
 
