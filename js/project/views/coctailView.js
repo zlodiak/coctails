@@ -23,6 +23,7 @@ APP.CoctailFormView = Backbone.View.extend({
 
   trySubmit: function () {  
     console.log(APP.pageStemwareView.getResultArr(), 'res 4')
+    console.log(APP.pageIngridientsView.getResultArr(), 'res 2')
 
 
     var modalFill = this._constructModalFill();

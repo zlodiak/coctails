@@ -36,6 +36,8 @@ APP.PageStemwareView = Backbone.View.extend({
   },
 
   getResultArr: function() {  
+    // function return array of id`s selected stemware
+
     var stemwareSelectedItems = APP.stemwareCollection.where({selected: true}),
         resultArr = [];
 

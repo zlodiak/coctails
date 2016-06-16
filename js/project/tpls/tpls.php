@@ -52,15 +52,15 @@
   </div>
 
   <div class="col-xs-4 ingridient_cell">
-    <input class="form-control" type="number" value="1">
+    <input class="form-control cnt_unit" type="number" value="1" id="cntUnit">
   </div>
 
   <div class="col-xs-3 ingridient_cell">
-    <select class="form-control" id="measuresUnit"></select>
+    <select class="form-control measures_unit" id="measuresUnit"></select>
   </div>
 
   <div class="col-xs-1 ingridient_cell">
-    <input type="checkbox">
+    <input class="decoration_unit" type="checkbox" id="decorationUnit">
   </div>    
 </script>
 

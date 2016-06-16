@@ -1,5 +1,9 @@
 APP.PageIngridientsView = Backbone.View.extend({  
 
+  initialize: function() { 
+    this.ingridientRows = [];
+  },  
+
   id: 'pageIngridients',
 
   className: 'page_ingridients',
@@ -22,14 +26,41 @@ APP.PageIngridientsView = Backbone.View.extend({
   },  
 
   addIngridientRow: function () {  
-    var ingridientElem =  new APP.PageIngridientRowView().render().el;
+    var ingridientElem =  new APP.ingridientRowView().render().el;
+
     this.$el.find('#ingridientsRows').append(ingridientElem);
-  }   
+    this.ingridientRows.push(ingridientElem);
+  },
+
+  getResultArr: function() {  
+    // function return array of selected values
+
+    var resultArr = [],
+        rowsElems = this.$el.find('#ingridientsRows .row');
+
+    rowsElems.each(function(index, element){
+      var ingridientUnitValue = $(element).find('#ingridientsUnit option:selected').val(),
+          cntUnitValue =        $(element).find('#cntUnit').val(),
+          measuresValue =       $(element).find('#measuresUnit option:selected').val(), 
+          decorationElem =      $(element).find('#decorationUnit'),
+          decorationValue = decorationElem.is(":checked") ? true : false,
+          rowValuesArr = [
+            {'ingridientUnitValue': ingridientUnitValue},
+            {'cntUnitValue': cntUnitValue},
+            {'measuresValue': measuresValue},
+            {'decorationValue': decorationValue}
+          ];
+
+      resultArr.push(rowValuesArr);
+    });    
+
+    return resultArr;
+  }       
 
 });
 
 
-APP.PageIngridientRowView = Backbone.View.extend({   
+APP.ingridientRowView = Backbone.View.extend({   
 
   initialize: function() { 
     this.model = new APP.IngridientModel();
