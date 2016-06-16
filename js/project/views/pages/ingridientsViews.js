@@ -32,9 +32,7 @@ APP.PageIngridientsView = Backbone.View.extend({
     this.ingridientRows.push(ingridientElem);
   },
 
-  getResultArr: function() {  
-    // function return array of selected values
-
+  getIngridientsValuesArr: function() {  
     var ingridientsValuesArr = [],
         rowsElems = this.$el.find('#ingridientsRows .row');
 

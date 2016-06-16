@@ -52,6 +52,23 @@ APP.PageDescView = Backbone.View.extend({
     };
 
     reader.readAsDataURL(fileInfo);
-  }    
+  },
+
+  getDescValuesArr: function() {  
+    var descValuesArr = [],
+        coctailName1Value =     this.$el.find('#coctailName1').val(),
+        coctailName2Value =     this.$el.find('#coctailName2').val(),
+        smallInstructionValue = this.$el.find('#smallInstruction').val(), 
+        largeInstructionValue = this.$el.find('#largeInstruction').val();
+
+    descValuesArr = [
+      {'coctailName1Value': coctailName1Value},
+      {'coctailName2Value': coctailName2Value},
+      {'smallInstructionValue': smallInstructionValue},
+      {'largeInstructionValue': largeInstructionValue}
+    ];
+
+    return descValuesArr;
+  }          
 
 });

@@ -50,9 +50,7 @@ APP.PageProcessView = Backbone.View.extend({
     this.$el.find("option:selected").attr('selected', true);    
   },
 
-  getResultArr: function() {  
-    // function return array of selected values
-
+  getProcessValuesArr: function() {  
     var processValuesArr = [],
         checkedTagsArr = [],
         dozeUnitValue =       this.$el.find('#doseUnit').val(),
