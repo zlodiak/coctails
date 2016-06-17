@@ -36,7 +36,6 @@ APP.TagsProcessModel = Backbone.Model.extend({
 APP.CoctailModel = Backbone.Model.extend({
 
   defaults: {
-    idCoctail: undefined,
     idsStemwareArr: [],
     processArr: [
       {dose: undefined},
@@ -47,7 +46,9 @@ APP.CoctailModel = Backbone.Model.extend({
       {basic: undefined},
       {tagsArr: []}
     ]   
-  }    
+  },
+
+  localStorage: new Backbone.LocalStorage('CoctailsList')      
 
 });
 

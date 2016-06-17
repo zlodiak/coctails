@@ -36,7 +36,10 @@ APP.CoctailFormView = Backbone.View.extend({
         descArr: APP.pageDescView.getDescValuesArr()
       });
 
-      console.log('model cre', coctail)
+      coctail.save();
+      APP.coctailsCollection.add(coctail);
+
+      console.log('model cre', coctail, APP.coctailsCollection)
     } else {
       console.log('model not cre')
     };
