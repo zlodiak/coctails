@@ -33,5 +33,15 @@ APP.TagsProcessModel = Backbone.Model.extend({
 });
 
 
+APP.CoctailModel = Backbone.Model.extend({
+
+  defaults: {
+    idCoctail: undefined,
+    idsStemwareArr: []      
+  }    
+
+});
+
+
 
 

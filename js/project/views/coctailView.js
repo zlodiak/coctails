@@ -29,6 +29,13 @@ APP.CoctailFormView = Backbone.View.extend({
 
 
     var modalFill = this._constructModalFill();
+
+    if(this._constructModalFill() == APP.CONFIG.successAddCoctailMsg + '<br>') {
+      console.log('model cre')
+    } else {
+      console.log('model not cre')
+    };
+
     this._constructModal(modalFill);
   },
 
@@ -47,9 +54,7 @@ APP.CoctailFormView = Backbone.View.extend({
       if(coctailName1.length == 0) { modalFill += APP.CONFIG.errorMsgCoctailName1 + '<br>' };  
       if(!stemwareSelectCnt) { modalFill += APP.CONFIG.errorMsgStemwareSelect + '<br>' };      
     } else {  
-      modalFill = APP.CONFIG.successAddCoctailMsg + '<br>';
-
-      console.log(APP.pageStemwareView.getResultArr());      
+      modalFill = APP.CONFIG.successAddCoctailMsg + '<br>';      
     };
 
     return modalFill;
