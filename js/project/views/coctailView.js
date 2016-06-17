@@ -22,16 +22,19 @@ APP.CoctailFormView = Backbone.View.extend({
   },  
 
   trySubmit: function () {  
-    console.log(APP.pageStemwareView.getstemwareValuesArr(), 'res 4')
-    console.log(APP.pageIngridientsView.getIngridientsValuesArr(), 'res 2')
-    console.log(APP.pageProcessView.getProcessValuesArr(), 'res 3')
-    console.log(APP.pageDescView.getDescValuesArr(), 'res 1')
-
-
     var modalFill = this._constructModalFill();
 
     if(this._constructModalFill() == APP.CONFIG.successAddCoctailMsg + '<br>') {
-      console.log('model cre')
+      var coctail = new APP.CoctailModel();
+
+      coctail.set({
+        idsStemwareArr: APP.pageStemwareView.getstemwareValuesArr(),
+        processArr: APP.pageProcessView.getProcessValuesArr(), 
+        ingridientsArr: APP.pageIngridientsView.getIngridientsValuesArr(),
+        descArr: APP.pageDescView.getDescValuesArr()
+      });
+
+      console.log('model cre', coctail)
     } else {
       console.log('model not cre')
     };

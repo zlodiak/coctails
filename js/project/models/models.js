@@ -37,7 +37,16 @@ APP.CoctailModel = Backbone.Model.extend({
 
   defaults: {
     idCoctail: undefined,
-    idsStemwareArr: []      
+    idsStemwareArr: [],
+    processArr: [
+      {dose: undefined},
+      {time: undefined},
+      {complexity: undefined},
+      {method: undefined},
+      {sturdiness: undefined},
+      {basic: undefined},
+      {tagsArr: []}
+    ]   
   }    
 
 });
