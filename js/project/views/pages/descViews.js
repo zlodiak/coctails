@@ -30,9 +30,8 @@ APP.PageDescView = Backbone.View.extend({
   },
 
   closeLoadFileMaster: function () {  
-    var fileInfo = document.getElementById('pageDescLoadImg').files[0];
-
-    console.log(fileInfo)
+    var fileInfo = document.getElementById('pageDescLoadImg').files[0],
+        self = this;
 
     var reader = new FileReader();
 
@@ -51,7 +50,7 @@ APP.PageDescView = Backbone.View.extend({
       };
     };
 
-    reader.readAsDataURL(fileInfo);
+    if(fileInfo) { reader.readAsDataURL(fileInfo) };    
   },
 
   getDescValuesArr: function() {  
@@ -59,13 +58,20 @@ APP.PageDescView = Backbone.View.extend({
         coctailName1Value =     this.$el.find('#coctailName1').val(),
         coctailName2Value =     this.$el.find('#coctailName2').val(),
         smallInstructionValue = this.$el.find('#smallInstruction').val(), 
-        largeInstructionValue = this.$el.find('#largeInstruction').val();
+        largeInstructionValue = this.$el.find('#largeInstruction').val(), 
+        srcLoadFileValue =      this.$el.find('#loadImg').attr('src'),
+        blobLoadFileValue =     this.$el.find('#loadImg').hasClass('load_img_loaded') ? srcLoadFileValue : undefined;
+
+/*    console.log(this.$el.find('#loadImg').hasClass('load_img_loaded'), 'has class')
+    console.log(this.$el.find('#loadImg').attr('src'), 'src')
+    console.log(this.blobLoadFile, 'get')*/
 
     descValuesArr = [
       {'coctailName1Value': coctailName1Value},
       {'coctailName2Value': coctailName2Value},
       {'smallInstructionValue': smallInstructionValue},
-      {'largeInstructionValue': largeInstructionValue}
+      {'largeInstructionValue': largeInstructionValue},
+      {'blobLoadFileValue': blobLoadFileValue}
     ];
 
     return descValuesArr;
