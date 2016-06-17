@@ -3,6 +3,7 @@
 <script src="js/libs/underscore-min.js"></script>
 <script src="js/libs/backbone-min.js"></script>
 <script src="js/libs/backbone-validation.min.js"></script>
+<script src="js/libs/backbone.localStorage-min.js"></script>
 
 <script>
   window.APP = window.APP || {};

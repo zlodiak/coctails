@@ -2,6 +2,8 @@ APP.CoctailFormView = Backbone.View.extend({
 
   initialize: function() { 
     this.pagesViews = [];
+    APP.coctailsCollection = new APP.CoctailsCollection();
+    APP.coctailsCollection.fetch();
 
     this._initPagesViews();
     this.render();  
