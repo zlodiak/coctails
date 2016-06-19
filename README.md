@@ -1,5 +1,4 @@
-live page: http://fh79272k.bget.ru/files/works/shipping_form/1/
+live page: http://fh79272k.bget.ru/files/works/coctails/1/
 
-form. use backbone and backbone validation plugin.
+form for add receipt to browser local storage. on backbone.
 
-user have ability after press certain button add dynamic fields to form
