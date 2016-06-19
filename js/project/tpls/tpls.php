@@ -68,8 +68,8 @@
 <script type="text/template" id="pageIngridientsTpl">
   <div class="row">
     <div class="col-xs-4"><h4>Ингридиенты</h4></div>
-    <div class="col-xs-4"><h4></h4></div>  
-    <div class="col-xs-3"><h4></h4></div>  
+    <div class="col-xs-4"><h4>Частей</h4></div>  
+    <div class="col-xs-3"><h4>Мера</h4></div>  
     <div class="col-xs-1"><img src="images/strawberry.png" alt="Украшение" title="Украшение"></div>          
   </div>  
 

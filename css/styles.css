@@ -46,6 +46,19 @@ body{
 
 
 
+/****************************************************************************** GLOBAL_blocks: footer */
+.footer{
+  width: 453px;
+  margin: 40px auto;
+
+  font-style: italic;
+  font-weight: bold;
+}
+
+  .footer_inner{
+    margin-bottom: 5px;
+  }
+
 /****************************************************************************** GLOBAL_blocks: header */
 .header_container{
   width: 484px;
