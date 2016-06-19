@@ -30,7 +30,7 @@ APP.CoctailFormView = Backbone.View.extend({
   submit: function () {  
     var modalFill = this._constructModalFill();
 
-    if(this._constructModalFill() == APP.CONFIG.successAddCoctailMsg + '<br>') {
+    if(modalFill == APP.CONFIG.successAddCoctailMsg + '<br>') {
       this._createCoctail();
       this.clearAllVews();
 
@@ -69,13 +69,18 @@ APP.CoctailFormView = Backbone.View.extend({
   },
 
   _constructModalFill: function () {  
-    var coctailName1 = $.trim($('#coctailName1').val()),
-        stemwareSelectCnt = APP.stemwareCollection.findWhere({selected: true}),
-        modalFill = '';
+    var modalFill = '',
+        checkLengthCoctailName1 = APP.pageDescView.getValidationResultArr().lengthCoctailName1,
+        checkStemwareSelectCnt = APP.pageStemwareView.getValidationResultArr().checkStemwareSelectCnt;
 
-    if(coctailName1.length == 0 || !stemwareSelectCnt) {  
-      if(coctailName1.length == 0) { modalFill += APP.CONFIG.errorMsgCoctailName1 + '<br>' };  
-      if(!stemwareSelectCnt) { modalFill += APP.CONFIG.errorMsgStemwareSelect + '<br>' };      
+    if(!checkLengthCoctailName1 || !checkStemwareSelectCnt) {  
+      if(!checkLengthCoctailName1) { 
+        modalFill += APP.CONFIG.errorMsgCoctailName1 + '<br>' 
+      }  
+
+      if(!checkStemwareSelectCnt) { 
+        modalFill += APP.CONFIG.errorMsgStemwareSelect + '<br>' 
+      };      
     } else {  
       modalFill = APP.CONFIG.successAddCoctailMsg + '<br>';      
     };

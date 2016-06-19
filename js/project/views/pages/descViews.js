@@ -1,4 +1,9 @@
-APP.PageDescView = Backbone.View.extend({   
+APP.PageDescView = Backbone.View.extend({  
+
+  initialize: function() {  
+    this.loadImgType = undefined;
+    this.loadImgSize = undefined;
+  },
 
   id: 'pageDesc',
 
@@ -29,13 +34,12 @@ APP.PageDescView = Backbone.View.extend({
     var fileInfo = document.getElementById('pageDescLoadImg').files[0],
         self = this;
 
+    console.log(fileInfo)
+
     var reader = new FileReader();
 
     reader.onload = function(e) { 
-      var elem = $("#loadImg"),
-          src,
-          width,
-          height;
+      var elem = $("#loadImg");
 
       if(fileInfo.size == 0) {
         elem.attr('src', 'images/' + APP.CONFIG.defaultLoadImg);
@@ -47,6 +51,15 @@ APP.PageDescView = Backbone.View.extend({
     };
 
     if(fileInfo) { reader.readAsDataURL(fileInfo) };    
+  },
+
+  getValidationResultArr: function() {  
+    var coctailName1 = $.trim(this.$el.find('#coctailName1').val()), 
+        checkCoctailName1 = coctailName1.length == 0 ? false : true;
+
+    return {
+      'lengthCoctailName1': checkCoctailName1
+    }
   },
 
   getDescValuesArr: function() {  
@@ -71,6 +84,7 @@ APP.PageDescView = Backbone.View.extend({
   }, 
 
   clearFields: function() {  
+    this.initialize();
     this.render();
   }       
 

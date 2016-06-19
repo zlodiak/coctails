@@ -50,6 +50,15 @@ APP.PageStemwareView = Backbone.View.extend({
   clearFields: function() {  
     this.initialize();
     this.render();
+  },
+
+  getValidationResultArr: function() {  
+    var stemwareSelectCnt = APP.stemwareCollection.findWhere({selected: true}), 
+        checkStemwareSelectCnt = stemwareSelectCnt ? true : false;
+
+    return {
+      'checkStemwareSelectCnt': checkStemwareSelectCnt
+    }
   }    
 
 });
