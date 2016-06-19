@@ -20,6 +20,7 @@ APP.CONFIG = {
     "Фруктовые", 
     "Для компании"
   ],
+  "errorMsgloadfileLarge": "Размер(вес) загруженного файла слишком большой",
   "errorMsgCoctailName1": "Необходимо ввести название коктейля",
   "errorMsgStemwareSelect": "Необходимо выбрать тип бокала",
   "successAddCoctailMsg": "Ваш рецепт коктейля добавлен в коллекцию"

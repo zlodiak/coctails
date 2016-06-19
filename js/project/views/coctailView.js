@@ -70,7 +70,8 @@ APP.CoctailFormView = Backbone.View.extend({
 
   _constructModalFill: function () {  
     var modalFill = '',
-        checkLengthCoctailName1 = APP.pageDescView.getValidationResultArr().lengthCoctailName1,
+        checkLengthCoctailName1 = APP.pageDescView.getValidationResultArr().checkCoctailName1,
+        checkLargeIloadImgSize = APP.pageDescView.getValidationResultArr().checkLargeIloadImgSize,
         checkStemwareSelectCnt = APP.pageStemwareView.getValidationResultArr().checkStemwareSelectCnt;
 
     if(!checkLengthCoctailName1 || !checkStemwareSelectCnt) {  
@@ -80,7 +81,11 @@ APP.CoctailFormView = Backbone.View.extend({
 
       if(!checkStemwareSelectCnt) { 
         modalFill += APP.CONFIG.errorMsgStemwareSelect + '<br>' 
-      };      
+      };    
+
+      if(!checkLargeIloadImgSize) { 
+        modalFill += APP.CONFIG.errorMsgloadfileLarge + '<br>' 
+      };           
     } else {  
       modalFill = APP.CONFIG.successAddCoctailMsg + '<br>';      
     };
