@@ -13,7 +13,7 @@
         <div class="copyright footer_inner">© Sergey Kalinin 2016</div>
         <div class="github footer_inner">
           <span class="label_github">GitHub: </span>
-          <a class="link" href="">sdsd</a>
+          <a class="link" href="//github.com/zlodiak/coctails" target="_blank">github.com/zlodiak/coctails</a>
         </div>
       </div>
     </div>
