@@ -20,6 +20,7 @@ APP.CONFIG = {
     "Фруктовые", 
     "Для компании"
   ],
+  "errorMsgloadfileType": "Загрузка файла такого формата не разрешена",
   "errorMsgloadfileLarge": "Размер(вес) загруженного файла слишком большой",
   "errorMsgCoctailName1": "Необходимо ввести название коктейля",
   "errorMsgStemwareSelect": "Необходимо выбрать тип бокала",

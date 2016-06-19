@@ -6,6 +6,11 @@ APP.PageDescView = Backbone.View.extend({
 
     this.MAX_LOADFILE_SIZE_BT = 100000;
     this.MIN_COCTAILNAME1_LENGTH = 1;
+    this.PERMITTED_FILE_TYPES_ARR = [
+      'image/png', 
+      'image/jpg', 
+      'image/jpeg'
+    ];
   },
 
   id: 'pageDesc',
@@ -63,15 +68,23 @@ APP.PageDescView = Backbone.View.extend({
   },
 
   getValidationResultArr: function() {  
+    var self = this;
+
     var coctailName1 = $.trim(this.$el.find('#coctailName1').val()), 
         checkCoctailName1 = coctailName1.length < this.MIN_COCTAILNAME1_LENGTH ? false : true,
-        checkLargeIloadImgSize = this.loadImgSize > this.MAX_LOADFILE_SIZE_BT ? false : true;
+        checkloadImgSize = this.loadImgSize > this.MAX_LOADFILE_SIZE_BT ? false : true,
+        checkloadImgType = false, 
+        loadFileIsExist = this.loadImgSize > 0 ? true : false;
 
-        console.log('gv', checkLargeIloadImgSize, this.loadImgSize, this.MAX_LOADFILE_SIZE_BT )
+    _.each(this.PERMITTED_FILE_TYPES_ARR, function(type){ 
+      if(type == self.loadImgType) {  checkloadImgType = true };
+    });
 
     return {
       'checkCoctailName1': checkCoctailName1,
-      'checkLargeIloadImgSize': checkLargeIloadImgSize
+      'checkloadImgSize': checkloadImgSize,
+      'checkloadImgType': checkloadImgType,
+      'loadFileIsExist': loadFileIsExist
     }
   },
 

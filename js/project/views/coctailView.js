@@ -34,9 +34,9 @@ APP.CoctailFormView = Backbone.View.extend({
       this._createCoctail();
       this.clearAllVews();
 
-      console.log('coctail create', APP.coctailsCollection)
+      // console.log('coctail create', APP.coctailsCollection)
     } else {
-      console.log('coctail not create')
+      // console.log('coctail not create')
     };
 
     this._constructModal(modalFill);
@@ -71,24 +71,37 @@ APP.CoctailFormView = Backbone.View.extend({
   _constructModalFill: function () {  
     var modalFill = '',
         checkLengthCoctailName1 = APP.pageDescView.getValidationResultArr().checkCoctailName1,
-        checkLargeIloadImgSize = APP.pageDescView.getValidationResultArr().checkLargeIloadImgSize,
-        checkStemwareSelectCnt = APP.pageStemwareView.getValidationResultArr().checkStemwareSelectCnt;
+        checkloadImgSize = APP.pageDescView.getValidationResultArr().checkloadImgSize,
+        checkloadImgType = APP.pageDescView.getValidationResultArr().checkloadImgType,
+        checkStemwareSelectCnt = APP.pageStemwareView.getValidationResultArr().checkStemwareSelectCnt,
+        loadFileIsExist = APP.pageDescView.getValidationResultArr().loadFileIsExist,
+        formIsValid = true;
 
-    if(!checkLengthCoctailName1 || !checkStemwareSelectCnt) {  
-      if(!checkLengthCoctailName1) { 
-        modalFill += APP.CONFIG.errorMsgCoctailName1 + '<br>' 
-      }  
-
-      if(!checkStemwareSelectCnt) { 
-        modalFill += APP.CONFIG.errorMsgStemwareSelect + '<br>' 
+    if(loadFileIsExist) {  
+      if(!checkloadImgSize) { 
+        modalFill += APP.CONFIG.errorMsgloadfileLarge + '<br>'; 
+        formIsValid = false;
       };    
 
-      if(!checkLargeIloadImgSize) { 
-        modalFill += APP.CONFIG.errorMsgloadfileLarge + '<br>' 
-      };           
-    } else {  
-      modalFill = APP.CONFIG.successAddCoctailMsg + '<br>';      
+      if(!checkloadImgType) { 
+        modalFill += APP.CONFIG.errorMsgloadfileType + '<br>'; 
+        formIsValid = false; 
+      };               
     };
+
+    if(!checkLengthCoctailName1) { 
+      modalFill += APP.CONFIG.errorMsgCoctailName1 + '<br>';
+      formIsValid = false;
+    }  
+
+    if(!checkStemwareSelectCnt) { 
+      modalFill += APP.CONFIG.errorMsgStemwareSelect + '<br>';
+      formIsValid = false; 
+    };  
+
+    if(formIsValid) {
+      modalFill = APP.CONFIG.successAddCoctailMsg + '<br>'; 
+    }
 
     return modalFill;
   },
