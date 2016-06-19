@@ -1,9 +1,9 @@
 <script type="text/template" id="navigationTpl">
   <div class="row navigation_box" id="navigationBox">
-    <a class="col-xs-3 navLink" id="navDesc"        href="#page_desc">Описание</a>
-    <a class="col-xs-3 navLink" id="navIngridients" href="#page_ingridients">Ингридиенты</a>
-    <a class="col-xs-3 navLink" id="navProcess"     href="#page_process">Процесс</a>
-    <a class="col-xs-3 navLink" id="navStemware"    href="#page_stemware">Бокалы</a>
+    <a class="col-xs-3 navLink" id="navDesc"        href="#page_desc">Описание<span></span></a>
+    <a class="col-xs-3 navLink" id="navIngridients" href="#page_ingridients">Ингридиенты<span></span></a>
+    <a class="col-xs-3 navLink" id="navProcess"     href="#page_process">Процесс<span></span></a>
+    <a class="col-xs-3 navLink" id="navStemware"    href="#page_stemware">Бокалы<span></span></a>
   </div>                
 </script>
 
@@ -22,15 +22,15 @@
     </div>
 
     <div class="col-xs-9">
-      <input class="form-control" type="text" maxlength="45" id="coctailName1" placeholder="Название коктейля">
-      <input class="form-control" type="text" maxlength="45" id="coctailName2" placeholder="Альтернативное название через запятую">
-      <textarea class="form-control" maxlength="225" id="smallInstruction" placeholder="Краткое описание"></textarea>        
+      <input class="form-control text_field" type="text" maxlength="45" id="coctailName1" placeholder="Название коктейля">
+      <input class="form-control text_field" type="text" maxlength="45" id="coctailName2" placeholder="Альтернативное название через запятую">
+      <textarea class="form-control text_field small_instruction" maxlength="225" id="smallInstruction" placeholder="Краткое описание"></textarea>        
     </div>
   </div>
 
   <div class="row">
     <div class="col-xs-12">
-      <textarea class="form-control" id="largeInstruction" maxlength="339" name="largeInstruction" placeholder="Инструкция для приготовления"></textarea>
+      <textarea class="form-control text_field large_instruction" id="largeInstruction" maxlength="339" name="largeInstruction" placeholder="Инструкция для приготовления"></textarea>
     </div>
   </div>             
 
@@ -70,7 +70,7 @@
     <div class="col-xs-4"><h4>Ингридиенты</h4></div>
     <div class="col-xs-4"><h4></h4></div>  
     <div class="col-xs-3"><h4></h4></div>  
-    <div class="col-xs-1"><h4>Украшение</h4></div>          
+    <div class="col-xs-1"><img src="images/strawberry.png" alt="Украшение" title="Украшение"></div>          
   </div>  
 
   <div class=" ingridients_units" id="ingridientsRows">
@@ -78,7 +78,9 @@
   </div>   
 
   <div class="row">
-    <div class="btn btn-xs btn-default pull-right" id="addIngridientBtn">Ещё</div>
+    <div class="col-xs-12">
+      <div class="btn btn-xs btn-default pull-right add_ingridient_btn" id="addIngridientBtn">Ещё</div>
+    </div>
   </div>             
 
   <div class="row navBox" >
@@ -111,7 +113,7 @@
     <div class="col-xs-3"><h4>Метод</h4></div>          
   </div>   
 
-  <div class="row">
+  <div class="row process_cells_wrap">
     <div class="col-xs-3 process_cell">
       <input class="form-control" id="doseUnit" type="number" value="1">
     </div>
@@ -139,7 +141,7 @@
     <div class="col-xs-4"><h4>По типу</h4></div>          
   </div>  
 
-  <div class="row">
+  <div class="row process_cells_wrap">
     <div class="col-xs-4 process_cell">
       <select class="form-control" id="sturdinessUnits"></select>
     </div>  
@@ -157,7 +159,7 @@
     <div class="col-xs-12"><h3>Теги</h3></div>
   </div>     
 
-  <div class="row" id="tagsProcessUnits"></div>          
+  <div class="row tags_process_units" id="tagsProcessUnits"></div>          
 
   <div class="row navBox" >
     <div class="col-xs-6">
