@@ -46,6 +46,31 @@ body{
 
 
 
+/****************************************************************************** GLOBAL_blocks: header */
+.header_container{
+  width: 484px;
+  margin: 0 auto;
+}
+
+  .header_container h1{
+    font-size: 46px;
+  }
+
+  .header-description{
+
+  }
+
+  .jumbotron .header-help-text{
+    color: #ccc;
+    font-size: 12px;
+    font-style: italic;
+  }
+
+    .header-help-text a{
+      text-decoration: underline;
+      color: #ccc;
+    }
+
 /****************************************************************************** GLOBAL_blocks: modal */
 .modal-body{
 	overflow: hidden;

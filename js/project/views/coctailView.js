@@ -5,12 +5,16 @@ APP.CoctailFormView = Backbone.View.extend({
     APP.coctailsCollection = new APP.CoctailsCollection();
     APP.coctailsCollection.fetch();
 
+    APP.headerView = new APP.HeaderView();
+
     this._initPagesViews();
     this.render();  
   },
 
   render: function () {  
     var self = this;
+
+    this.$el.before(APP.headerView.render().el);
 
     _.each(this.pagesViews, function(view){ 
       $(self.el).append(view.render().el);

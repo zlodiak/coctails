@@ -218,3 +218,14 @@
     </div>
   </div>  
 </script>
+
+
+<script type="text/template" id="headerTpl">
+  <div class="container header_container">
+    <div class="col-xs-12">
+      <h1>База коктейлей</h1>
+      <p class="header-help-text">Внимание! Данные хрянятся в <a href="images/local_storage.png">локальном хранилище</a> браузера</p>
+    </div>
+  </div>
+  
+</script>
