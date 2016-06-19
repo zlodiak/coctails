@@ -1,9 +1,5 @@
 APP.PageDescView = Backbone.View.extend({   
 
-  initialize: function() { 
-    
-  },
-
   id: 'pageDesc',
 
   className: 'page_desc',
@@ -72,6 +68,10 @@ APP.PageDescView = Backbone.View.extend({
     ];
 
     return descValuesArr;
-  }          
+  }, 
+
+  clearFields: function() {  
+    this.render();
+  }       
 
 });

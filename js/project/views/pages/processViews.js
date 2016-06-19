@@ -1,9 +1,5 @@
 APP.PageProcessView = Backbone.View.extend({   
 
-  initialize: function() { 
-
-  },
-
   id: 'pageProcess',
 
   className: 'page_process',
@@ -80,7 +76,11 @@ APP.PageProcessView = Backbone.View.extend({
     ];
 
     return processValuesArr;
-  }       
+  }, 
+
+  clearFields: function() {  
+    this.render();
+  }        
 
 });
 

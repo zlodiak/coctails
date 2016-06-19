@@ -4,7 +4,7 @@ APP.HeaderView = Backbone.View.extend({
 
   template: _.template($('#headerTpl').html()),
 
-  render: function () {  console.log('l t c ');
+  render: function () { 
     this.$el.html(this.template());
     return this;
   }     

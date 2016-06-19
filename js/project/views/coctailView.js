@@ -24,10 +24,10 @@ APP.CoctailFormView = Backbone.View.extend({
   },
 
   events:{
-    'click #submit' : 'trySubmit'
+    'click #submit' : 'submit'
   },  
 
-  trySubmit: function () {  
+  submit: function () {  
     var modalFill = this._constructModalFill();
 
     if(this._constructModalFill() == APP.CONFIG.successAddCoctailMsg + '<br>') {
@@ -43,6 +43,8 @@ APP.CoctailFormView = Backbone.View.extend({
       coctail.save();
       APP.coctailsCollection.add(coctail);
 
+      this.clearAllVews();
+
       console.log('model cre', coctail, APP.coctailsCollection)
     } else {
       console.log('model not cre')
@@ -56,6 +58,12 @@ APP.CoctailFormView = Backbone.View.extend({
       view.$el.addClass('hide');
     });
   }, 
+
+  clearAllVews: function () {  
+    _.each(this.pagesViews, function(view){ 
+      view.clearFields();
+    });
+  },   
 
   _constructModalFill: function () {  
     var coctailName1 = $.trim($('#coctailName1').val()),

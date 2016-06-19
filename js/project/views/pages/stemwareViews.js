@@ -45,7 +45,12 @@ APP.PageStemwareView = Backbone.View.extend({
     });    
 
     return stemwareValuesArr;
-  }  
+  }, 
+
+  clearFields: function() {  
+    this.initialize();
+    this.render();
+  }    
 
 });
 

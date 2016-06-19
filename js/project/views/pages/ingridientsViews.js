@@ -53,7 +53,12 @@ APP.PageIngridientsView = Backbone.View.extend({
     });    
 
     return ingridientsValuesArr;
-  }       
+  }, 
+
+  clearFields: function() {  
+    this.initialize();
+    this.render();
+  }         
 
 });
 

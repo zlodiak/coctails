@@ -48,7 +48,7 @@
 
 <script type="text/template" id="ingridientRowTpl">
   <div class="col-xs-4 ingridient_cell">
-    <select class="form-control" id="ingridientsUnit"></select>
+    <select class="form-control ingridients_unit" id="ingridientsUnit"></select>
   </div>
 
   <div class="col-xs-4 ingridient_cell">
