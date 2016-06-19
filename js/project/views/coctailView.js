@@ -31,23 +31,12 @@ APP.CoctailFormView = Backbone.View.extend({
     var modalFill = this._constructModalFill();
 
     if(this._constructModalFill() == APP.CONFIG.successAddCoctailMsg + '<br>') {
-      var coctail = new APP.CoctailModel();
-
-      coctail.set({
-        idsStemwareArr: APP.pageStemwareView.getstemwareValuesArr(),
-        processArr: APP.pageProcessView.getProcessValuesArr(), 
-        ingridientsArr: APP.pageIngridientsView.getIngridientsValuesArr(),
-        descArr: APP.pageDescView.getDescValuesArr()
-      });
-
-      coctail.save();
-      APP.coctailsCollection.add(coctail);
-
+      this._createCoctail();
       this.clearAllVews();
 
-      console.log('model cre', coctail, APP.coctailsCollection)
+      console.log('coctail create', APP.coctailsCollection)
     } else {
-      console.log('model not cre')
+      console.log('coctail not create')
     };
 
     this._constructModal(modalFill);
@@ -64,6 +53,20 @@ APP.CoctailFormView = Backbone.View.extend({
       view.clearFields();
     });
   },   
+
+  _createCoctail: function () {  
+    var coctail = new APP.CoctailModel();
+
+    coctail.set({
+      idsStemwareArr: APP.pageStemwareView.getstemwareValuesArr(),
+      processArr: APP.pageProcessView.getProcessValuesArr(), 
+      ingridientsArr: APP.pageIngridientsView.getIngridientsValuesArr(),
+      descArr: APP.pageDescView.getDescValuesArr()
+    });
+
+    coctail.save();
+    APP.coctailsCollection.add(coctail);
+  },
 
   _constructModalFill: function () {  
     var coctailName1 = $.trim($('#coctailName1').val()),
