@@ -42,13 +42,8 @@ APP.PageDescView = Backbone.View.extend({
     var fileInfo = document.getElementById('pageDescLoadImg').files[0],
         self = this;
 
-    console.log(fileInfo)
-
     this.loadImgType = fileInfo.type;
     this.loadImgSize = fileInfo.size;   
-
-    console.log(this.loadImgType) 
-    console.log(this.loadImgSize) 
 
     var reader = new FileReader();
 
