@@ -1,7 +1,7 @@
 <script type="text/template" id="navigationTpl">
   <div class="row navigation_box" id="navigationBox">
     <a class="col-xs-3 navLink" id="navDesc"        href="#page_desc">Описание<span></span></a>
-    <a class="col-xs-3 navLink" id="navIngridients" href="#page_ingridients">Ингридиенты<span></span></a>
+    <a class="col-xs-3 navLink" id="navIngridients" href="#page_ingridients">Ингредиенты<span></span></a>
     <a class="col-xs-3 navLink" id="navProcess"     href="#page_process">Процесс<span></span></a>
     <a class="col-xs-3 navLink" id="navStemware"    href="#page_stemware">Бокалы<span></span></a>
   </div>                
@@ -40,7 +40,7 @@
     </div>
 
     <div class="col-xs-6">
-      <a class="btn btn-default pull-right next to_ingridients" href="#page_ingridients">Ингридиенты</a>
+      <a class="btn btn-default pull-right next to_ingridients" href="#page_ingridients">Ингредиенты</a>
     </div>      
   </div>   
 </script>
@@ -67,7 +67,7 @@
 
 <script type="text/template" id="pageIngridientsTpl">
   <div class="row">
-    <div class="col-xs-4"><h4>Ингридиенты</h4></div>
+    <div class="col-xs-4"><h4>Ингредиенты</h4></div>
     <div class="col-xs-4"><h4>Частей</h4></div>  
     <div class="col-xs-3"><h4>Мера</h4></div>  
     <div class="col-xs-1"><img src="images/strawberry.png" alt="Украшение" title="Украшение"></div>          
@@ -163,7 +163,7 @@
 
   <div class="row navBox" >
     <div class="col-xs-6">
-      <a class="btn btn-default prev to_ingridients" href="#page_ingridients">Ингридиенты</a>
+      <a class="btn btn-default prev to_ingridients" href="#page_ingridients">Ингредиенты</a>
     </div>
 
     <div class="col-xs-6">
